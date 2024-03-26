@@ -1,6 +1,10 @@
 import React, { useEffect, useState } from "react";
 import { Link, useParams } from "react-router-dom";
 import UseDonation from "../../hook/UseDonation";
+import { readLocalStorage } from "../../utils/LocalStorage";
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+import { wishListLocalStorage } from "../../shared/wishLish";
 
 const BookDetail = () => {
   const { bookId } = useParams();
@@ -15,10 +19,30 @@ const BookDetail = () => {
     //console.log(findData)
     setSingleData(findData);
   }, [data, bookId]);
+/* handle read button */
+const handleRead=()=>{
+  toast("Already Data read");
+readLocalStorage(singleData)
+
+}
+/* handle wishlist */
+const handleWishList=()=>{
+
+wishListLocalStorage(singleData)
+
+console.log(dataAseKina)
+
+
+console.log(saveData)
+
+
+  console.log('dskf')
+}
 
   return (
     <div>
       <section className="bg-gray-800 text-gray-100">
+      <ToastContainer />
         <div className="container max-w-xl p-6 py-12 mx-auto space-y-24 lg:px-8 lg:max-w-7xl">
           <div className="grid lg:gap-8 lg:grid-cols-2 lg:items-center">
             <div className="lg:col-start-2">
@@ -85,9 +109,13 @@ const BookDetail = () => {
 
 </div>
 
-<button class="btn btn-outline btn-success">Read</button>
-<button class="btn  btn-primary ml-6">WishList</button>
 
+<button class="btn btn-outline btn-success" onClick={handleRead}>Read</button>
+
+<Link to='/listedBook'>
+<button class="btn  btn-primary ml-6" onClick={handleWishList}>WishList</button>
+
+</Link>
 
 
               </div>
