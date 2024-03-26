@@ -4,7 +4,7 @@ import { Outlet } from 'react-router-dom'
 
 const Roots = () => {
   return (
-    <div>
+    <div className='container mx-auto  bg-white'>
 <Navbar></Navbar>
 <Outlet></Outlet>
     </div>
