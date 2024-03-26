@@ -37,16 +37,12 @@ const handleWishList=()=>{
 wishListLocalStorage(singleData)
 
 
-
-
-
-
-
 }
+const{bookId:books,image,tags,bookName,author,rating,category}=singleData || {}
 
   return (
     <div>
-      <section className="bg-gray-800 text-gray-100">
+      <section className="bg-white text-black font-bold ">
       <ToastContainer />
         <div className="container max-w-xl p-6 py-12 mx-auto space-y-24 lg:px-8 lg:max-w-7xl">
           <div className="grid lg:gap-8 lg:grid-cols-2 lg:items-center">
@@ -61,15 +57,15 @@ wishListLocalStorage(singleData)
 <h4 className="text-2xl font-semibold"><span className='text-gray-400 text-3xl'>Review:</span>{singleData?.review}</h4>
 
            
-{/* tag */}              
+      
 <div className='flex flex-col lg:justify-between lg:flex-row border-b-2 p-4'>
 <h4 className="text-2xl font-semibold ">Tag</h4>
-{/* 
 
-<h4 className="text-2xl font-semibold text-green-400">#{singleData?.tags[2]}</h4>
-<h4 className="text-2xl font-semibold text-green-400">#{singleData?.tags[1]}</h4>
+<h4 className="text-green-400 font-semibold text-2xl">#classic</h4>
+<h4 className="text-2xl font-semibold text-green-400">#adolesence</h4>
 
-*/}
+
+
 
 </div>
 
@@ -77,8 +73,15 @@ wishListLocalStorage(singleData)
 
 
 
-<h4 className="text-2xl font-semibold ">Number of Pages:</h4>
-<h4 className="text-2xl font-semibold ">{singleData?.totalPage}</h4>
+<h4 className="text-2xl font-semibold "><span className="text-[#131313CC]">Number of Pagaes:</span>
+
+</h4>
+
+
+<h4 className="text-2xl font-semibold ">
+
+
+{singleData?.totalPage}</h4>
 
 
 
@@ -87,7 +90,7 @@ wishListLocalStorage(singleData)
 
 
 
-<h4 className="text-2xl font-semibold ">Publisher:</h4>
+<h4 className="text-2xl font-semibold "><span className="text-[#131313CC]">Publisher:</span></h4>
 <h4 className="text-2xl font-semibold ">{singleData?.publisher}</h4>
 
 
@@ -97,7 +100,10 @@ wishListLocalStorage(singleData)
 
 
 
-<h4 className="text-2xl font-semibold ">Year of Publishing:</h4>
+<h4 className="text-2xl font-semibold ">
+<span className="text-[#131313CC]">Year of Publishing::</span>
+
+</h4>
 <h4 className="text-2xl font-semibold ">{singleData?.yearOfPublishing}</h4>
 
 
@@ -107,7 +113,11 @@ wishListLocalStorage(singleData)
 
 
 
-<h4 className="text-2xl font-semibold ">Rating:</h4>
+<h4 className="text-2xl font-semibold ">
+
+<span className="text-[#131313CC]">Rating: </span>
+
+</h4>
 <h4 className="text-2xl font-semibold ">{singleData?.rating}</h4>
 
 
@@ -115,10 +125,10 @@ wishListLocalStorage(singleData)
 </div>
 
 
-<button class="btn btn-outline btn-success" onClick={handleRead}>Read</button>
+<button class="btn btn-outline  btn-success text-xl" onClick={handleRead}>Read</button>
 
 
-<button class="btn  btn-primary ml-6" onClick={handleWishList}>WishList</button>
+<button class="btn   bg-[#50B1C9] text-white border-none ml-6 text-xl" onClick={handleWishList}>WishList</button>
 
 
 
@@ -136,9 +146,12 @@ wishListLocalStorage(singleData)
         </div>
       </section>
 
-      <Link to="/">
-        <button class="btn btn-success">GO BACK</button>
-      </Link>
+<div className="">
+
+<Link to="/">
+<button className="btn bg-green-500 border-none text-white">Go  Back Home</button>
+</Link>
+</div>
     </div>
   );
 };

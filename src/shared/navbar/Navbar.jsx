@@ -156,7 +156,7 @@ const Navbar = () => {
         </div>
         <div className="navbar-end">
         <button className="btn btn-success text-white lg:font-bold lg:text-xl mr-2 lg:mr-4">Sign In</button>
-        <button className="btn btn-accent text-white lg:font-bold lg:text-xl  mr-2 lg:mr-4">Sign Up</button>
+        <button className="btn bg-[#50B1C9] border-none text-white lg:font-bold lg:text-xl  mr-2 lg:mr-4">Sign Up</button>
    
      
         </div>
