@@ -27,7 +27,7 @@ readLocalStorage(singleData)
 }
 /* handle wishlist */
 const handleWishList=()=>{
-
+  toast("Already Wish List added");
 wishListLocalStorage(singleData)
 
 console.log(dataAseKina)
@@ -112,10 +112,10 @@ console.log(saveData)
 
 <button class="btn btn-outline btn-success" onClick={handleRead}>Read</button>
 
-<Link to='/listedBook'>
+
 <button class="btn  btn-primary ml-6" onClick={handleWishList}>WishList</button>
 
-</Link>
+
 
 
               </div>

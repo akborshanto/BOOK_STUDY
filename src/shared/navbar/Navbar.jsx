@@ -33,6 +33,8 @@ const Navbar = () => {
        <NavLink to='/listedBook'  className={({isActive})=>isActive ? "bg-green-500 text-white font-bold p-4 rounded-lg  ":"text-2xl font-bold" } style={{marginRight:'30px'}}>Listed Books</NavLink>
 
         <NavLink to='/PagesRead'  className={({isActive})=>isActive ? "bg-green-500 text-white font-bold p-4  rounded-lg":"text-2xl font-bold" } style={{marginRight:'30px'}}>Pages to Read</NavLink>
+        <NavLink to='/contact'  className={({isActive})=>isActive ? "bg-green-500 text-white font-bold p-4  rounded-lg":"text-2xl font-bold" } style={{marginRight:'30px'}}>Contact</NavLink>
+        <NavLink to='/blog'  className={({isActive})=>isActive ? "bg-green-500 text-white font-bold p-4  rounded-lg":"text-2xl font-bold" } style={{marginRight:'30px'}}>Blog</NavLink>
 
       </ul>
     </div>

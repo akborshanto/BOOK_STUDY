@@ -13,6 +13,8 @@ import Home from './component/home/Home.jsx';
 import ListedBooks from './pages/ListedBooks/ListedBooks.jsx';
 import PagesRead from './pages/Pages-to-Read/PagesRead.jsx';
 import BookDetail from './pages/BookDetail/BookDetail';
+import Contact from './pages/contact/Contact.jsx';
+import Blog from './pages/blog/Blog.jsx';
 
 
 const router = createBrowserRouter([
@@ -37,7 +39,17 @@ element:<Home></Home>
   path: '/bookDetail/:bookId',
   element:<BookDetail></BookDetail>
 
-}
+},
+{
+  path: '/contact',
+  element:<Contact></Contact>
+
+},
+{
+  path: '/blog',
+  element:<Blog></Blog>
+
+},
 
 
 

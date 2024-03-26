@@ -10,9 +10,9 @@ const dataAseKina=saveData.find(item => item.bookId  == singleData.bookId)
 
 if(dataAseKina){
 
-  alert('data already ase')
 }else{
 
+  alert('data already ase')
 
 saveData.push(singleData)
 const localValue=JSON.stringify(saveData)
