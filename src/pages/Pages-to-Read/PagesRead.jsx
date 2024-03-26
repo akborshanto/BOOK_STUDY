@@ -1,22 +1,113 @@
+
+
+
+// import React, { FunctionComponent } from "react";
+// import { BarChart, Bar, Cell, XAxis, YAxis, CartesianGrid } from "recharts";
+// import { scaleOrdinal } from "d3-scale";
+// import { schemeCategory10 } from "d3-scale-chromatic";
+
+// const colors = scaleOrdinal().range();
+
+// const data = [
+//   {
+//     name: "Page A",
+//     uv: 4000,
+//     pv: 2400,
+//     amt: 2400
+//   },
+//   {
+//     name: "Page B",
+//     uv: 3000,
+//     pv: 1398,
+//     amt: 2210
+//   },
+//   {
+//     name: "Page C",
+//     uv: 2000,
+//     pv: 9800,
+//     amt: 2290
+//   },
+//   {
+//     name: "Page D",
+//     uv: 2780,
+//     pv: 3908,
+//     amt: 2000
+//   },
+//   {
+//     name: "Page E",
+//     uv: 1890,
+//     pv: 4800,
+//     amt: 2181
+//   },
+//   {
+//     name: "Page F",
+//     uv: 2390,
+//     pv: 3800,
+//     amt: 2500
+//   },
+//   {
+//     name: "Page G",
+//     uv: 3490,
+//     pv: 4300,
+//     amt: 2100
+//   }
+// ];
+
+// const getPath = (x, y, width, height) => {
+//   return `M${x},${y + height}C${x + width / 3},${y + height} ${x + width / 2},${
+//     y + height / 3
+//   } 
+//   ${x + width / 2}, ${y}
+//   C${x + width / 2},${y + height / 3} ${x + (2 * width) / 3},${y + height} ${
+//     x + width
+//   }, ${y + height}
+//   Z`;
+// };
+
+// const PagesRead = () => {
+
+ 
+  
+//   return (
+
+//     <div className="chart-container">
+//     <BarChart
+//       width={500}
+//       height={300}
+//       data={data}
+//       margin={{
+//         top: 20,
+//         right: 30,
+//         left: 20,
+//         bottom: 5
+//       }}
+//     >
+//       <CartesianGrid strokeDasharray="3 3" />
+//       <XAxis dataKey="name" />
+//       <YAxis />
+//       <Bar
+//         dataKey="uv"
+//         fill="#8884d8"
+//         shape={<TriangleBar />}
+//         label={{ position: "top" }}
+//       >
+//         {data.map((entry, index) => (
+//           <Cell key={`cell-${index}`} fill={colors[index % 20]} />
+//         ))}
+//       </Bar>
+//     </BarChart>
+    
+//     </div>
+//   )
+// }
+
+// export default PagesRead
 import React from 'react'
 
 const PagesRead = () => {
-  const readList = [
-    { bookName: "Book 1", totalPages: 200 },
-    { bookName: "Book 2", totalPages: 300 },
-    { bookName: "Book 3", totalPages: 250 }
-  ];
   return (
-
-    <div className="chart-container">
-    {readList.map((book, index) => (
-      <div key={index} className="bar" style={{ height: book.totalPages }}>
-        <div className="book-label">
-          <span>{book.bookName}</span>
-          <span>{book.totalPages} Pages</span>
-        </div>
-      </div>
-    ))}
+    <div>
+      CHART
     </div>
   )
 }

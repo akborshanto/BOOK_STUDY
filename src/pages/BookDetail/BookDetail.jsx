@@ -15,28 +15,33 @@ const BookDetail = () => {
   //console.log(typeof bookId)
 
   useEffect(() => {
+ 
     const findData = data.find((item) => item.bookId == bookId);
     //console.log(findData)
     setSingleData(findData);
   }, [data, bookId]);
 /* handle read button */
 const handleRead=()=>{
-  toast("Already Data read");
+
+
+
 readLocalStorage(singleData)
+
+
 
 }
 /* handle wishlist */
 const handleWishList=()=>{
-  toast("Already Wish List added");
+
+
 wishListLocalStorage(singleData)
 
-console.log(dataAseKina)
 
 
-console.log(saveData)
 
 
-  console.log('dskf')
+
+
 }
 
   return (

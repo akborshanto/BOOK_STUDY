@@ -4,7 +4,7 @@ import Books from '../BookCard/Books'
 
 const Home = () => {
   return (
-    <div>
+    <div className='p-4 lg:p-0'>
     <Banner></Banner>
     <Books></Books>
     </div>
