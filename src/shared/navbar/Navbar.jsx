@@ -26,15 +26,14 @@ const Navbar = () => {
     </div>
     <div className="navbar-center hidden lg:flex">
       <ul className="menu menu-horizontal px-1">
-        <li>
-        <NavLink to='/'>HOME</NavLink>
-        </li>
-        <li>
-       <NavLink to='/listedBook'>Listed Books</NavLink>
-        </li>
-        <li>
-        <NavLink to='/PagesRead'>Pages to Read</NavLink>
-        </li>
+
+        <NavLink to='/' className={({isActive})=>isActive ? "bg-green-500 text-white font-bold p-4 rounded-lg":"text-2xl font-bold" } style={{marginRight:'30px'}}>HOME</NavLink>
+        
+   
+       <NavLink to='/listedBook'  className={({isActive})=>isActive ? "bg-green-500 text-white font-bold p-4 rounded-lg  ":"text-2xl font-bold" } style={{marginRight:'30px'}}>Listed Books</NavLink>
+
+        <NavLink to='/PagesRead'  className={({isActive})=>isActive ? "bg-green-500 text-white font-bold p-4  rounded-lg":"text-2xl font-bold" } style={{marginRight:'30px'}}>Pages to Read</NavLink>
+
       </ul>
     </div>
     <div className="navbar-end">
