@@ -9,11 +9,12 @@ import { IoIosArrowDown } from "react-icons/io";
 const ListedBooks = () => {
   const [read, setRead] = useState([]);
   const [wish, setWish] = useState([]);
-
+const [readDisplay,setReadDisplay]=useState([])
   //console.log(read)
   useEffect(() => {
     const getDefaultData = JSON.parse(localStorage.getItem("read")) || [];
     setRead(getDefaultData);
+setReadDisplay(getDefaultData)
   }, []);
 
   /* wish list */
@@ -23,6 +24,24 @@ const ListedBooks = () => {
     setWish(getDefaultData);
   }, []);
 
+const handleReadDisplay=(sort)=>{
+
+if(sort === "rating"){
+
+setReadDisplay(read)
+}
+// }else if(sort  === 'totalPage'){
+
+// const filterTotal=sort.find(sorte=> sorte.totalPage  == )
+
+
+// }
+
+
+
+}
+
+  console.log(readDisplay)
   return (
     <div>
       <div className="text-center mb-6">
@@ -38,7 +57,7 @@ const ListedBooks = () => {
             tabIndex={0}
             className="dropdown-content z-[1] menu p-2 shadow text-[#FFAC33] font-bold text-xl  rounded-box w-52"
           >
-            <li>
+            <li onClick={()=>handleReadDisplay("rating")}>
               <a>Rating</a>
             </li>
             <li>
@@ -61,10 +80,10 @@ const ListedBooks = () => {
        <div className="">
        
        
-       {read?.map((item) => (
+       {readDisplay?.map((item) => (
 
 
-         <div className=" mb-4  mt-10 lg:mt-16 lg:mb-12 shadow-2xl hover:bg-green-100    p-4">
+         <div  key={Math.random()} className=" mb-4  mt-10 lg:mt-16 lg:mb-12 shadow-2xl hover:bg-green-100    p-4">
          
          
          <div className="flex flex-col lg:flex-row lg:items-center gap-8 text-center  lg:text-start w-full space-x-2 sm:space-x-4">

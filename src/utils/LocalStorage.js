@@ -7,7 +7,7 @@ export const readLocalStorage = (singleData,notify) => {
   );
 
   if (dataAseKina) {
-toast.error("you have already read")
+toast.error("you have already read this book")
   } else {
     savedData.push(singleData);
     const localValue = JSON.stringify(savedData);

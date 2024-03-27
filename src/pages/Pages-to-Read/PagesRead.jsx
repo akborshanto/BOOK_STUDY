@@ -3,6 +3,9 @@ import { BarChart, Bar, Cell, XAxis, YAxis, CartesianGrid } from 'recharts';
 
 const colors = ['#0088FE', '#00C49F', '#FFBB28', '#FF8042', 'red', 'pink'];
 
+
+
+
 const data = [
   {
     name: 'Page A',

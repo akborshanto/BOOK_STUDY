@@ -23,19 +23,20 @@ const BookDetail = () => {
 /* handle read button */
 const handleRead=()=>{
 
+if(singleData && singleData){
 
+  wishListLocalStorage(singleData)
 
-readLocalStorage(singleData)
-
-
+}
 
 }
 /* handle wishlist */
 const handleWishList=()=>{
 
-
-wishListLocalStorage(singleData)
-
+  if(singleData){
+    wishListLocalStorage(singleData)
+  
+  }
 
 }
 const{bookId:books,image,tags,bookName,author,rating,category}=singleData || {}
