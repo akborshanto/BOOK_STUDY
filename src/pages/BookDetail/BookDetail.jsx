@@ -25,7 +25,8 @@ const handleRead=()=>{
 
 if(singleData ){
 readLocalStorage(singleData)
-
+wishListLocalStorage(singleData)
+  
 
 }
 
