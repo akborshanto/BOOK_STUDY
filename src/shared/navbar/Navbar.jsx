@@ -87,8 +87,8 @@ const Navbar = () => {
         </NavLink>
             </ul>
           </div>
-          <a className="btn btn-ghost text-xl lg:text-3xl font-bold text-black">
-            Book Review
+          <a className="  text-xl lg:text-3xl font-bold text-[#50B1C9]">
+          BOOK <span className="text-green-400">STUDY</span>
           </a>
         </div>
         <div className="navbar-center hidden lg:flex">

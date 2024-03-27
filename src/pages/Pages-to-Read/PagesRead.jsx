@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { BarChart, Bar, Cell, XAxis, YAxis, CartesianGrid } from 'recharts';
 import UseDonation from '../../hook/UseDonation';
 
-const colors = ['#0088FE', 'green', '#FFBB28', '#FF8042', 'red', 'pink'];
+const colors = ['#0085F6', '#00C29C', '#FBB929', '#FBB929', '#FBB929', '#00C29C'];
 
 
 
@@ -22,6 +22,7 @@ const TriangleBar = (props) => {
 export default function App() {
   const {data:datas}=UseDonation()
 const [read,setRead]=useState([])
+
   //console.log(read)
   useEffect(() => {
     const getDefaultData = JSON.parse(localStorage.getItem("read")) || [];
@@ -30,52 +31,64 @@ const [read,setRead]=useState([])
   }, []);
 
 
-  const reads=read.map((book)=> book.category)
-console.log(reads)
+  const reads=read.map((book)=> book.totalPage)
+  const readsBook=read.map((book)=> book.bookName.slice(0,5))
+//console.log(reads)
+
+console.log(readsBook)
 
   const data = [
     {
-      name: 'Adoles',
-      uv:204,
+      name: readsBook[0],
+      uv:reads[0],
+      pv: reads.length,
+      amt: reads,
+    },
+    
+    {
+      name: readsBook[1],
+      uv:reads[1],
+      pv:43 ,
+      amt: reads,
+    },
+    {
+      name: readsBook[2],
+      uv:reads[2],
       pv: reads,
       amt: reads,
     },
     {
-      name: reads,
-      uv: 3000,
-      pv: 1398,
-      amt: 2210,
+      name: readsBook[3],
+      uv:reads[4],
+      pv: reads,
+      amt: reads,
     },
+    
     {
-      name: 'shanto',
-      uv: 2000,
-      pv: 9800,
-      amt: 2290,
+   name: readsBook[4],
+      uv:reads[5],
+      pv: reads,
+      amt: reads,
     },
+    
     {
-      name: 'adoles',
-      uv: 2780,
-      pv: 3908,
-      amt: 2000,
+   name: readsBook[5],
+      uv:reads[6],
+      pv: reads,
+      amt: reads,
     },
-    {
-      name: 'Adoles',
-      uv: 1890,
-      pv: 4800,
-      amt: 2181,
-    },
+    
 
   ];
 
-console.log(datas)
 
   return (
 <div className='  lg:ml-[500px] w-[300px]   mt-16 pb-16 lg:pb-10'>
 
 <BarChart
 
-  width={400}
-  height={400}
+  width={380}
+  height={380}
   data={data}
   margin={{
     top: 20,
