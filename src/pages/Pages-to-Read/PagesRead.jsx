@@ -1,55 +1,10 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { BarChart, Bar, Cell, XAxis, YAxis, CartesianGrid } from 'recharts';
+import UseDonation from '../../hook/UseDonation';
 
-const colors = ['#0088FE', '#00C49F', '#FFBB28', '#FF8042', 'red', 'pink'];
+const colors = ['#0088FE', 'green', '#FFBB28', '#FF8042', 'red', 'pink'];
 
 
-
-
-const data = [
-  {
-    name: 'Page A',
-    uv: 4000,
-    pv: 2400,
-    amt: 2400,
-  },
-  {
-    name: 'Page B',
-    uv: 3000,
-    pv: 1398,
-    amt: 2210,
-  },
-  {
-    name: 'Page C',
-    uv: 2000,
-    pv: 9800,
-    amt: 2290,
-  },
-  {
-    name: 'Page D',
-    uv: 2780,
-    pv: 3908,
-    amt: 2000,
-  },
-  {
-    name: 'Page E',
-    uv: 1890,
-    pv: 4800,
-    amt: 2181,
-  },
-  {
-    name: 'Page F',
-    uv: 2390,
-    pv: 3800,
-    amt: 2500,
-  },
-  {
-    name: 'Page G',
-    uv: 3490,
-    pv: 4300,
-    amt: 2100,
-  },
-];
 
 const getPath = (x, y, width, height) => {
   return `M${x},${y + height}C${x + width / 3},${y + height} ${x + width / 2},${y + height / 3}
@@ -65,13 +20,62 @@ const TriangleBar = (props) => {
 };
 
 export default function App() {
+  const {data:datas}=UseDonation()
+const [read,setRead]=useState([])
+  //console.log(read)
+  useEffect(() => {
+    const getDefaultData = JSON.parse(localStorage.getItem("read")) || [];
+    setRead(getDefaultData);
+
+  }, []);
+
+
+  const reads=read.map((book)=> book.category)
+console.log(reads)
+
+  const data = [
+    {
+      name: 'Adoles',
+      uv:204,
+      pv: reads,
+      amt: reads,
+    },
+    {
+      name: reads,
+      uv: 3000,
+      pv: 1398,
+      amt: 2210,
+    },
+    {
+      name: 'shanto',
+      uv: 2000,
+      pv: 9800,
+      amt: 2290,
+    },
+    {
+      name: 'adoles',
+      uv: 2780,
+      pv: 3908,
+      amt: 2000,
+    },
+    {
+      name: 'Adoles',
+      uv: 1890,
+      pv: 4800,
+      amt: 2181,
+    },
+
+  ];
+
+console.log(datas)
+
   return (
-<div className='  lg:ml-[500px] w-[300px] ml-16  mt-16 pb-16 lg:pb-10'>
+<div className='  lg:ml-[500px] w-[300px]   mt-16 pb-16 lg:pb-10'>
 
 <BarChart
-className=''
-  width={300}
-  height={300}
+
+  width={400}
+  height={400}
   data={data}
   margin={{
     top: 20,
@@ -83,7 +87,7 @@ className=''
   <CartesianGrid strokeDasharray="3 3" />
   <XAxis dataKey="name" />
   <YAxis />
-  <Bar dataKey="uv" fill="#8884d8" shape={<TriangleBar />} label={{ position: 'top' }}>
+  <Bar dataKey="uv" fill="#fb5200" shape={<TriangleBar />} label={{ position: 'top' }}>
     {data.map((entry, index) => (
       <Cell key={`cell-${index}`} fill={colors[index % 20]} />
     ))}

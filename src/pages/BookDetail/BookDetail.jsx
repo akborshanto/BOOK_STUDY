@@ -23,9 +23,9 @@ const BookDetail = () => {
 /* handle read button */
 const handleRead=()=>{
 
-if(singleData && singleData){
+if(singleData ){
+readLocalStorage(singleData)
 
-  wishListLocalStorage(singleData)
 
 }
 
@@ -33,10 +33,10 @@ if(singleData && singleData){
 /* handle wishlist */
 const handleWishList=()=>{
 
-  if(singleData){
+ 
     wishListLocalStorage(singleData)
   
-  }
+
 
 }
 const{bookId:books,image,tags,bookName,author,rating,category}=singleData || {}
@@ -149,9 +149,7 @@ const{bookId:books,image,tags,bookName,author,rating,category}=singleData || {}
 
 <div className="">
 
-<Link to="/">
-<button className="btn bg-green-500 border-none text-white">Go  Back Home</button>
-</Link>
+
 </div>
     </div>
   );

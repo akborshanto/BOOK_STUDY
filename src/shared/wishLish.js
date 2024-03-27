@@ -11,7 +11,7 @@ const saveData=JSON.parse(getData)  || []
 const dataAseKina=saveData.find(item => item.bookId  == singleData.bookId)
 
 if(dataAseKina){
-toast.error('Already Data Saved WishList')
+toast.error('data already aceee')
 
 }else{
 

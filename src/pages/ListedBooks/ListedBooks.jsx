@@ -14,7 +14,7 @@ const [readDisplay,setReadDisplay]=useState([])
   useEffect(() => {
     const getDefaultData = JSON.parse(localStorage.getItem("read")) || [];
     setRead(getDefaultData);
-setReadDisplay(getDefaultData)
+
   }, []);
 
   /* wish list */
@@ -22,26 +22,19 @@ setReadDisplay(getDefaultData)
   useEffect(() => {
     const getDefaultData = JSON.parse(localStorage.getItem("wishList")) || [];
     setWish(getDefaultData);
+    setReadDisplay(getDefaultData)
   }, []);
 
-const handleReadDisplay=(sort)=>{
-
-if(sort === "rating"){
-
-setReadDisplay(read)
-}
-// }else if(sort  === 'totalPage'){
-
-// const filterTotal=sort.find(sorte=> sorte.totalPage  == )
 
 
-// }
+  // const sorts=[
+  //   {name:'shanto',score:30},
+  //   {name:'adto',score:20},
+  // ]
+  // console.log(readDisplay)
 
 
 
-}
-
-  console.log(readDisplay)
   return (
     <div>
       <div className="text-center mb-6">
@@ -57,7 +50,7 @@ setReadDisplay(read)
             tabIndex={0}
             className="dropdown-content z-[1] menu p-2 shadow text-[#FFAC33] font-bold text-xl  rounded-box w-52"
           >
-            <li onClick={()=>handleReadDisplay("rating")}>
+            <li >
               <a>Rating</a>
             </li>
             <li>
@@ -80,7 +73,7 @@ setReadDisplay(read)
        <div className="">
        
        
-       {readDisplay?.map((item) => (
+       {read?.map((item) => (
 
 
          <div  key={Math.random()} className=" mb-4  mt-10 lg:mt-16 lg:mb-12 shadow-2xl hover:bg-green-100    p-4">
