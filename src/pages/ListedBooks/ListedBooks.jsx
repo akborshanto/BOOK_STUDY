@@ -6,6 +6,7 @@ import { CiLocationOn } from "react-icons/ci";
 import { IoMdContact } from "react-icons/io";
 import { MdOutlineContactPage } from "react-icons/md";
 import { IoIosArrowDown } from "react-icons/io";
+import Read from "../../dynamic/Read";
 const ListedBooks = () => {
   const [read, setRead] = useState([]);
   const [wish, setWish] = useState([]);
@@ -33,9 +34,11 @@ const [readDisplay,setReadDisplay]=useState([])
   // ]
   // console.log(readDisplay)
 
-  /* context api */
-
-
+//   /* context api */
+// if(read.length <1){
+//   return <h1>PLZ READ THE BOOK</h1>
+// }
+ 
   return (
    
     <div>
@@ -65,14 +68,18 @@ const [readDisplay,setReadDisplay]=useState([])
         </ul>
       </div>
     </div>
-
     <Tabs className='p-4 lg:p-0'>
       <TabList>
         <Tab>Read Books</Tab>
         <Tab>WisList Books</Tab>
       </TabList>
 
+      {
+read.length <1?<Read></Read>:''
+
+      }
       <TabPanel className=''>
+
      <div className="">
      
      

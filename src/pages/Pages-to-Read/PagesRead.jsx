@@ -81,7 +81,9 @@ console.log(readsBook)
 
   ];
 
-
+// if(reads.length ===0){
+//   return "PLEASE ADD"
+// }
   return (
 <div className='  lg:ml-[500px] w-[300px]   mt-16 pb-16 lg:pb-10'>
 
