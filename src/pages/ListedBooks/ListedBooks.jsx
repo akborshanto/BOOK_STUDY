@@ -2,7 +2,10 @@ import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { Tab, Tabs, TabList, TabPanel } from "react-tabs";
 import "react-tabs/style/react-tabs.css";
-
+import { CiLocationOn } from "react-icons/ci";
+import { IoMdContact } from "react-icons/io";
+import { MdOutlineContactPage } from "react-icons/md";
+import { IoIosArrowDown } from "react-icons/io";
 const ListedBooks = () => {
   const [read, setRead] = useState([]);
   const [wish, setWish] = useState([]);
@@ -16,7 +19,6 @@ const ListedBooks = () => {
   /* wish list */
 
   useEffect(() => {
-    
     const getDefaultData = JSON.parse(localStorage.getItem("wishList")) || [];
     setWish(getDefaultData);
   }, []);
@@ -24,17 +26,17 @@ const ListedBooks = () => {
   return (
     <div>
       <div className="text-center mb-6">
-        <h1 className="bg-gray-200 p-4 text-center font-bold rounded-3xl my-8 text-8xl">
+        <h1 className="bg-gray-200 p-4 text-center font-bold rounded-3xl my-8 text-3xl lg:text-6xl text-black font-serif">
           BOOKS
         </h1>
 
-        <div className="dropdown dropdown-bottom">
-          <div tabIndex={0} role="button" className="btn m-1">
-            Sort By
+        <div className="dropdown dropdown-bottom mb-16 lg:mb-6">
+          <div tabIndex={0} role="button" className="btn m-1 bg-green-400 border-none text-white text-xl">
+            Sort By<IoIosArrowDown />
           </div>
           <ul
             tabIndex={0}
-            className="dropdown-content z-[1] menu p-2 shadow bg-base-100 rounded-box w-52"
+            className="dropdown-content z-[1] menu p-2 shadow text-[#FFAC33] font-bold text-xl  rounded-box w-52"
           >
             <li>
               <a>Rating</a>
@@ -49,178 +51,164 @@ const ListedBooks = () => {
         </div>
       </div>
 
-      <Tabs>
+      <Tabs className='p-4 lg:p-0'>
         <TabList>
           <Tab>Read Books</Tab>
           <Tab>WisList Books</Tab>
         </TabList>
 
-        <TabPanel>
-          {read?.map((item) => (
-            <div className="flex flex-col max-w-3xl p-6 space-y-4 sm:p-10 bg-gray-900 text-gray-100">
-              <h2 className="text-xl font-semibold">{item.bookName}</h2>
-              <ul className="flex flex-col divide-y divide-gray-700">
-                <li className="flex flex-col py-6 sm:flex-row sm:justify-between">
-                  <div className="flex w-full space-x-2 sm:space-x-4">
-                    <img
-                      className="flex-shrink-0 object-cover w-20 h-20 dark:border- rounded outline-none sm:w-32 sm:h-32 bg-gray-500"
-                      src="https://images.unsplash.com/photo-1526170375885-4d8ecf77b99f?ixlib=rb-1.2.1&amp;ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&amp;auto=format&amp;fit=crop&amp;w=1350&amp;q=80"
-                      alt="Polaroid camera"
-                    />
-                    <div className="flex flex-col justify-between w-full pb-4">
-                      <div className="flex justify-between w-full pb-2 space-x-2">
-                        <div className="space-y-1">
-                          <h3 className="text-lg font-semibold leading-snug sm:pr-8">
-                            Polaroid camera
-                          </h3>
-                          <p className="text-sm text-gray-400">Classic</p>
-                        </div>
-                        <div className="text-right">
-                          <p className="text-lg font-semibold">59.99€</p>
-                          <p className="text-sm line-through text-gray-600">
-                            75.50€
-                          </p>
-                        </div>
-                      </div>
-                      <div className="flex text-sm divide-x">
-                        <button
-                          type="button"
-                          className="flex items-center px-2 py-1 pl-0 space-x-1"
-                        >
-                          <svg
-                            xmlns="http://www.w3.org/2000/svg"
-                            viewBox="0 0 512 512"
-                            className="w-4 h-4 fill-current"
-                          >
-                            <path d="M96,472a23.82,23.82,0,0,0,23.579,24H392.421A23.82,23.82,0,0,0,416,472V152H96Zm32-288H384V464H128Z"></path>
-                            <rect
-                              width="32"
-                              height="200"
-                              x="168"
-                              y="216"
-                            ></rect>
-                            <rect
-                              width="32"
-                              height="200"
-                              x="240"
-                              y="216"
-                            ></rect>
-                            <rect
-                              width="32"
-                              height="200"
-                              x="312"
-                              y="216"
-                            ></rect>
-                            <path d="M328,88V40c0-13.458-9.488-24-21.6-24H205.6C193.488,16,184,26.542,184,40V88H64v32H448V88ZM216,48h80V88H216Z"></path>
-                          </svg>
-                          <span>Remove</span>
-                        </button>
-                        <button
-                          type="button"
-                          className="flex items-center px-2 py-1 space-x-1"
-                        >
-                          <svg
-                            xmlns="http://www.w3.org/2000/svg"
-                            viewBox="0 0 512 512"
-                            className="w-4 h-4 fill-current"
-                          >
-                            <path d="M453.122,79.012a128,128,0,0,0-181.087.068l-15.511,15.7L241.142,79.114l-.1-.1a128,128,0,0,0-181.02,0l-6.91,6.91a128,128,0,0,0,0,181.019L235.485,449.314l20.595,21.578.491-.492.533.533L276.4,450.574,460.032,266.94a128.147,128.147,0,0,0,0-181.019ZM437.4,244.313,256.571,425.146,75.738,244.313a96,96,0,0,1,0-135.764l6.911-6.91a96,96,0,0,1,135.713-.051l38.093,38.787,38.274-38.736a96,96,0,0,1,135.765,0l6.91,6.909A96.11,96.11,0,0,1,437.4,244.313Z"></path>
-                          </svg>
-                          <span>Add to favorites</span>
-                        </button>
-                      </div>
-                    </div>
-                  </div>
-                </li>
-              </ul>
-            </div>
-          ))}
+        <TabPanel className=''>
+       <div className="">
+       
+       
+       {read?.map((item) => (
+
+
+         <div className=" mb-4  mt-10 lg:mt-16 lg:mb-12 shadow-2xl hover:bg-green-100    p-4">
+         
+         
+         <div className="flex flex-col lg:flex-row lg:items-center gap-8 text-center  lg:text-start w-full space-x-2 sm:space-x-4">
+         <img
+           className="ml-16 ml:0 flex-shrink-0 object-cover w-[200px] lg:w-[300px] h-[200px] lg:h-[300px] dark:border- rounded outline-none sm:w-32 sm:h-32 bg-gray-500"
+           src={item.image}
+           alt="Polaroid camera"
+         />
+         <div className="flex flex-col justify-between w-full pb-4">
+           <div className="flex justify-between w-full pb-2 space-x-2">
+             <div className="space-y-1">
+               <h3 className=" text-xl font-serif leading-snug sm:pr-8  text-black font-bold mb-4 text-start">
+                 {item.bookName}
+               </h3>
+               <p className="text-sm text-start font-bold font-serif text-black my-4">
+                 By:{item.author}
+               </p>
+
+               <div className="text-start flex flex-col lg:flex-row gap-2 justify-start lg:gap-10 text-black font-bold ">
+                 <h1 className=" ">Tag</h1>
+                 <h1 className=" text-green-400">#{item.tags[0]}</h1>
+                 <h1 className=" text-green-400">#{item.tags[1]}</h1>
+
+                 <div className="flex  gap-2 top-0 items-center">
+                   <span className="font-bold text-black ">
+                     <CiLocationOn />
+                   </span>
+                   <h1 className="font-bold text-[#131313CC]  ">
+                     yearOfPublishing :{item.yearOfPublishing}
+                   </h1>
+                 </div>
+               </div>
+             </div>
+
+  
+           </div>
+
+     
+           <div className="flex flex-col gap-3 text-xl lg:flex-row lg:gap-8 border-b-2 pb-4 my-4">
+           
+           <div className="flex text-[#131313CC] gap-2 items-center">
+           <span>
+             <IoMdContact />
+           </span>
+           <h1 className="text-[#131313CC]  font-bold">Publisher:{item.publisher}</h1>
+         </div>
+         <div className="flex text-[#131313CC] gap-2 items-center">
+           <span>
+           <MdOutlineContactPage />
+           </span>
+           <h1 className="text-[#131313CC] font-bold ">Page:{item.totalPage}</h1>
+         </div>
+           </div>
+       
+<div className="flex flex-col lg:flex-row gap-4">
+
+<button class="btn bg-[#328EFF99] rounded-3xl border-none text-white lg:text-xl">Category:{item.category}</button>
+<button class="btn bg-[#FFAC3326] text-[#FFAC33] rounded-3xl border-none lg:text-xl mx-6">Rating:{item.rating}</button>
+<button class="btn bg-[#23BE0A] rounded-3xl border-none text-white lg:text-xl">viewDetails</button>
+</div>
+
+         </div>
+       </div>
+
+         </div>
+
+      ))}
+       </div>
         </TabPanel>
         <TabPanel>
-          {wish?.map((item) => (
-            <div className="flex flex-col max-w-3xl p-6 space-y-4 sm:p-10 bg-gray-900 text-gray-100">
-              <h2 className="text-xl font-semibold">{item.bookName}</h2>
-              <ul className="flex flex-col divide-y divide-gray-700">
-                <li className="flex flex-col py-6 sm:flex-row sm:justify-between">
-                  <div className="flex w-full space-x-2 sm:space-x-4">
-                    <img
-                      className="flex-shrink-0 object-cover w-20 h-20 dark:border- rounded outline-none sm:w-32 sm:h-32 bg-gray-500"
-                      src="https://images.unsplash.com/photo-1526170375885-4d8ecf77b99f?ixlib=rb-1.2.1&amp;ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&amp;auto=format&amp;fit=crop&amp;w=1350&amp;q=80"
-                      alt="Polaroid camera"
-                    />
-                    <div className="flex flex-col justify-between w-full pb-4">
-                      <div className="flex justify-between w-full pb-2 space-x-2">
-                        <div className="space-y-1">
-                          <h3 className="text-lg font-semibold leading-snug sm:pr-8">
-                            Polaroid camera
-                          </h3>
-                          <p className="text-sm text-gray-400">Classic</p>
-                        </div>
-                        <div className="text-right">
-                          <p className="text-lg font-semibold">59.99€</p>
-                          <p className="text-sm line-through text-gray-600">
-                            75.50€
-                          </p>
-                        </div>
-                      </div>
-                      <div className="flex text-sm divide-x">
-                        <button
-                          type="button"
-                          className="flex items-center px-2 py-1 pl-0 space-x-1"
-                        >
-                          <svg
-                            xmlns="http://www.w3.org/2000/svg"
-                            viewBox="0 0 512 512"
-                            className="w-4 h-4 fill-current"
-                          >
-                            <path d="M96,472a23.82,23.82,0,0,0,23.579,24H392.421A23.82,23.82,0,0,0,416,472V152H96Zm32-288H384V464H128Z"></path>
-                            <rect
-                              width="32"
-                              height="200"
-                              x="168"
-                              y="216"
-                            ></rect>
-                            <rect
-                              width="32"
-                              height="200"
-                              x="240"
-                              y="216"
-                            ></rect>
-                            <rect
-                              width="32"
-                              height="200"
-                              x="312"
-                              y="216"
-                            ></rect>
-                            <path d="M328,88V40c0-13.458-9.488-24-21.6-24H205.6C193.488,16,184,26.542,184,40V88H64v32H448V88ZM216,48h80V88H216Z"></path>
-                          </svg>
-                          <span>Remove</span>
-                        </button>
-                        <button
-                          type="button"
-                          className="flex items-center px-2 py-1 space-x-1"
-                        >
-                          <svg
-                            xmlns="http://www.w3.org/2000/svg"
-                            viewBox="0 0 512 512"
-                            className="w-4 h-4 fill-current"
-                          >
-                            <path d="M453.122,79.012a128,128,0,0,0-181.087.068l-15.511,15.7L241.142,79.114l-.1-.1a128,128,0,0,0-181.02,0l-6.91,6.91a128,128,0,0,0,0,181.019L235.485,449.314l20.595,21.578.491-.492.533.533L276.4,450.574,460.032,266.94a128.147,128.147,0,0,0,0-181.019ZM437.4,244.313,256.571,425.146,75.738,244.313a96,96,0,0,1,0-135.764l6.911-6.91a96,96,0,0,1,135.713-.051l38.093,38.787,38.274-38.736a96,96,0,0,1,135.765,0l6.91,6.909A96.11,96.11,0,0,1,437.4,244.313Z"></path>
-                          </svg>
-                          <span>Add to favorites</span>
-                        </button>
-                      </div>
+          {wish?.map((wish) => (
+            <div className=" mb-4  mt-10 lg:mt-16 lg:mb-12 shadow-2xl hover:bg-green-100    p-4">
+         
+         
+            <div className="flex flex-col lg:flex-row lg:items-center gap-8 text-center  lg:text-start w-full space-x-2 sm:space-x-4">
+            <img
+              className="ml-16 ml:0 flex-shrink-0 object-cover w-[200px] lg:w-[300px] h-[200px] lg:h-[300px] dark:border- rounded outline-none sm:w-32 sm:h-32 bg-gray-500"
+              src={wish.image}
+              alt="Polaroid camera"
+            />
+            <div className="flex flex-col justify-between w-full pb-4">
+              <div className="flex justify-between w-full pb-2 space-x-2">
+                <div className="space-y-1">
+                  <h3 className=" text-xl font-serif leading-snug sm:pr-8  text-black font-bold mb-4 text-start">
+                    {wish.bookName}
+                  </h3>
+                  <p className="text-sm text-start font-bold font-serif text-black my-4">
+                    By:{wish.author}
+                  </p>
+   
+                  <div className="text-start flex flex-col lg:flex-row gap-2 justify-start lg:gap-10 text-black font-bold ">
+                    <h1 className=" ">Tag</h1>
+                    <h1 className=" text-green-400">#{wish.tags[0]}</h1>
+                    <h1 className=" text-green-400">#{wish.tags[1]}</h1>
+   
+                    <div className="flex  gap-2 top-0 wishs-center">
+                      <span className="font-bold text-black ">
+                        <CiLocationOn />
+                      </span>
+                      <h1 className="font-bold text-[#131313CC]  ">
+                        yearOfPublishing :{wish.yearOfPublishing}
+                      </h1>
                     </div>
                   </div>
-                </li>
-              </ul>
+                </div>
+   
+     
+              </div>
+   
+        
+              <div className="flex flex-col gap-3 text-xl lg:flex-row lg:gap-8 border-b-2 pb-4 my-4">
+              
+              <div className="flex text-[#131313CC] gap-2 items-center">
+              <span>
+                <IoMdContact />
+              </span>
+              <h1 className="text-[#131313CC]  font-bold">Publisher:{wish.publisher}</h1>
             </div>
+            <div className="flex text-[#131313CC] gap-2 items-center">
+              <span>
+              <MdOutlineContactPage />
+              </span>
+              <h1 className="text-[#131313CC] font-bold ">Page:{wish.totalPage}</h1>
+            </div>
+              </div>
+          
+   <div className="flex flex-col lg:flex-row gap-4">
+   
+   <button class="btn bg-[#328EFF99] rounded-3xl border-none text-white lg:text-xl">Category:{wish.category}</button>
+   <button class="btn bg-[#FFAC3326] text-[#FFAC33] rounded-3xl border-none lg:text-xl mx-6">Rating:{wish.rating}</button>
+   <button class="btn bg-[#23BE0A] rounded-3xl border-none text-white lg:text-xl">viewDetails</button>
+   </div>
+   
+            </div>
+          </div>
+   
+            </div>
+   
           ))}
         </TabPanel>
       </Tabs>
 
       <Link to="/">
-        <button class="btn btn-primary">Go Back</button>
+      <button className="btn bg-green-500 border-none text-white">Go  Back Home</button>
       </Link>
     </div>
   );

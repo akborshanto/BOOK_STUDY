@@ -13,6 +13,7 @@
     "@types/jest": "^29.5.12",
     "@types/node": "^20.11.30",
     "barchart": "^0.6.1",
+    "dchart-bar-triangle-with-line": "^0.1.0",
     "localforage": "^1.10.0",
     "match-sorter": "^6.3.4",
     "react": "^18.2.0",
