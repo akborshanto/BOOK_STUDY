@@ -35,8 +35,10 @@ wishListLocalStorage(singleData)
 const handleWishList=()=>{
 
  
+   if(singleData){
     wishListLocalStorage(singleData)
   
+   }
 
 
 }
