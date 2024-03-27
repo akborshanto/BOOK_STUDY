@@ -41,6 +41,9 @@ element:<Home></Home>
   element:<BookDetail></BookDetail>
 
 },
+
+
+
 {
   path: '/contact',
   element:<Contact></Contact>

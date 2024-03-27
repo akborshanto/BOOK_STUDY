@@ -7,7 +7,7 @@ const Navbar = () => {
       <div className="navbar bg-white ">
         <div className="navbar-start">
           <div className="dropdown">
-            <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
+            <div tabIndex={0} role="button" className="btn btn-ghost  lg:hidden">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 className="h-5 w-5"
@@ -31,59 +31,59 @@ const Navbar = () => {
             to="/"
             className={({ isActive }) =>
               isActive
-                ? "  border-white"
-                : "text-xl font-bold"
+                ? " text-xl font-bold text-green-400 "
+                : ""
             }
             style={{ marginRight: "30px" }}
           >
-          <button class="text-green-300">Home</button>
+       Home
           </NavLink>
           <NavLink
           to="/listedBook"
           className={({ isActive }) =>
             isActive
-              ? " text-white  rounded-lg"
+              ? "   rounded-lg text-green-400 "
               : " font-bold"
           }
-          style={{ marginRight: "30px" }}
+          style={{ marginRight: "30px",}}
         >
-        <button class="  text-green-300">Listed Books</button>
+      Listed Books
         </NavLink>
 
           <NavLink
             to="/PagesRead"
             className={({ isActive }) =>
             isActive
-              ? " text-white font-bold rounded-lg"
+              ? " font-bold rounded-lg text-green-400"
               : " font-bold"
           }
           style={{ marginRight: "30px" }}
         >
-        <button class="text-green-300">PagesBook</button>
+PagesBook
         </NavLink>
 
           <NavLink
             to="/contact"
             className={({ isActive }) =>
             isActive
-              ? " text-white font-bold rounded-lg ::hover:text-white"
-              : " font-bold"
+              ? " font-bold rounded-lg ::hover:text-white text-green-400"
+            : ""
           }
           style={{ marginRight: "30px", }}
         >
-        <button class="text-green-300">Contact</button>
+       Contact
         </NavLink>
 
           <NavLink
             to="/blog"
             className={({ isActive }) =>
             isActive
-              ? " text-white font-bold rounded-lg"
+              ? " font-bold rounded- text-green-400"
               : " font-bold"
           }
           style={{ marginRight: "30px" }}
         >
-        <button class="text-green-300">Book Item</button>
+   Book Item
         </NavLink>
             </ul>
           </div>
@@ -97,59 +97,59 @@ const Navbar = () => {
               to="/"
               className={({ isActive }) =>
                 isActive
-                  ? " text-white font-bold rounded-lg"
+                  ? " font-bold rounded-lg btn btn-outline btn-success"
                   : "text-2xl font-bold"
               }
               style={{ marginRight: "30px" }}
             >
-            <button class="btn btn-outline btn-success">Home</button>
+ Home
             </NavLink>
             <NavLink
             to="/listedBook"
             className={({ isActive }) =>
               isActive
-                ? " text-white font-bold rounded-lg"
+                ? "  font-bold rounded-lg btn btn-outline btn-success"
                 : "text-2xl font-bold"
             }
             style={{ marginRight: "30px" }}
           >
-          <button class="btn btn-outline btn-success">Listed Books</button>
+        Listed book 
           </NavLink>
 
             <NavLink
               to="/PagesRead"
               className={({ isActive }) =>
               isActive
-                ? " text-white font-bold rounded-lg"
+                ? "  font-bold rounded-lg btn btn-outline btn-success"
                 : "text-2xl font-bold"
             }
             style={{ marginRight: "30px" }}
           >
-          <button class="btn btn-outline btn-success">PagesBook</button>
+     Pages Book
           </NavLink>
 
             <NavLink
               to="/contact"
               className={({ isActive }) =>
               isActive
-                ? " text-white font-bold rounded-lg ::hover:text-white"
+                ? " font-bold rounded-lg ::hover:text-white btn btn-outline btn-success"
                 : "text-2xl font-bold"
             }
             style={{ marginRight: "30px", }}
           >
-          <button class="btn btn-outline btn-success hover:text-white">Contact</button>
+        Contact
           </NavLink>
 
             <NavLink
               to="/blog"
               className={({ isActive }) =>
               isActive
-                ? " text-white font-bold rounded-lg"
+                ? " font-bold rounded-lg  btn btn-outline btn-success"
                 : "text-2xl font-bold"
             }
             style={{ marginRight: "30px" }}
           >
-          <button class="btn btn-outline btn-success">Book Item</button>
+      Book Item
           </NavLink>
 
           </ul>

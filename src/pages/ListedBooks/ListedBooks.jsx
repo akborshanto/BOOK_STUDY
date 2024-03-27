@@ -1,4 +1,4 @@
-import React, { createContext, useEffect, useState } from "react";
+import React, {  useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { Tab, Tabs, TabList, TabPanel } from "react-tabs";
 import "react-tabs/style/react-tabs.css";
@@ -34,7 +34,6 @@ const [readDisplay,setReadDisplay]=useState([])
   // console.log(readDisplay)
 
   /* context api */
-  const UserContext=createContext()
 
 
   return (
@@ -210,8 +209,13 @@ const [readDisplay,setReadDisplay]=useState([])
  <div className="flex flex-col lg:flex-row gap-4">
  
  <button class="btn bg-[#328EFF99] rounded-3xl border-none text-white lg:text-xl">Category:{wish.category}</button>
+ 
  <button class="btn bg-[#FFAC3326] text-[#FFAC33] rounded-3xl border-none lg:text-xl mx-6">Rating:{wish.rating}</button>
+
  <button class="btn bg-[#23BE0A] rounded-3xl border-none text-white lg:text-xl">viewDetails</button>
+ 
+ 
+
  </div>
  
           </div>
@@ -223,9 +227,7 @@ const [readDisplay,setReadDisplay]=useState([])
       </TabPanel>
     </Tabs>
 
-    <Link to="/">
-    <button className="btn bg-green-500 border-none text-white">Go  Back Home</button>
-    </Link>
+
   </div>
     
 

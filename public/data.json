@@ -4,78 +4,78 @@
       "bookName": "To Kill ",
       "author": "Harper Lee",
       "image": "https://img.freepik.com/free-vector/good-paper-wattpad-book-cover_23-2149452379.jpg?t=st=1711383917~exp=1711387517~hmac=e8d660b99de6365e147ffbffdbdf83321e3ce15bc097b4b511d627fada160a5e&w=740",
-      "review": "A classic tale of racial injustice and moral growth.",
+      "review": "it’s different from the book blurb that goes.",
       "totalPage": 281,
       "category": "Fiction",
       "tags": ["classic", "racial injustice", "morality"],
       "publisher": "J. B. Lippincott & Co.",
       "yearOfPublishing": 1960,
-     "rating":"5.00"
+     "rating":"5.05"
     },
     {
       "bookId": 2,
       "bookName": "English",
       "author": "George Orwell",
       "image": "https://img.freepik.com/free-vector/abstract-elegant-winter-book-cover_23-2148798745.jpg?t=st=1711383815~exp=1711387415~hmac=9a60b9657ed124ce0c010df407294c995f1cee524617bd83c496571beda57029&w=740",
-      "review": "A dystopian masterpiece depicting a totalitarian regime.",
+      "review": "on the back of your physical book.",
       "totalPage": 328,
       "category": "Fiction",
       "tags": ["dystopian", "totalitarianism", "surveillance"],
       "publisher": "Secker & Warburg",
       "yearOfPublishing": 1949
-      , "rating":"4.00"
+      , "rating":"4.02"
     },
     {
       "bookId": 3,
       "bookName": "The Great ",
       "author": "F. Scott Fitzgerald",
       "image": "https://img.freepik.com/free-psd/book-hardcover-mockup_125540-382.jpg?t=st=1711383571~exp=1711387171~hmac=426238aa3108c65b722c6a4c7f2570b2f3fe569de302169072965a564585e3a2&w=740",
-      "review": "An exploration of the elusive American Dream in the Jazz Age.",
+      "review": "Your book description is part of your metadata, which holds your book.",
       "totalPage": 180,
       "category": "Fiction",
       "tags": ["American Dream", "Jazz Age", "wealth"],
       "publisher": "Charles Scribner's Sons",
       "yearOfPublishing": 1925
-      , "rating":"5.00"
+      , "rating":"5.01"
     },
     {
       "bookId": 4,
       "bookName": " The Pride ",
       "author": "Jane Austen",
       "image": "https://img.freepik.com/free-psd/book-hardcover-mockup_125540-225.jpg?t=st=1711383643~exp=1711387243~hmac=95b73d8e85f51ca2fbdc34c3fdce41030afd79052f548faffad6946c2ce5ddf1&w=826",
-      "review": "A timeless romance with sharp social commentary.",
+      "review": "your book details for stores and readers to access. ",
       "totalPage": 279,
       "category": "Fiction",
       "tags": ["romance", "social commentary", "Regency era"],
       "publisher": "T. Egerton, Whitehall",
       "yearOfPublishing": 1813
-      ,  "rating":"3.00"
+      ,  "rating":"3.02"
     },
     {
       "bookId": 5,
       "bookName": "The Bike    ",
       "author": "Yuval Noah Harari",
       "image": "https://img.freepik.com/free-vector/bike-guy-wattpad-book-cover_23-2149452163.jpg?w=740&t=st=1711383735~exp=1711384335~hmac=f3cf6123a00e2335059c3532ed368770d3ee11aa3ef42ac3c6d0a18a275f8c30",
-      "review": "An enlightening journey through the hist.",
+      "review": "Before learning how to write a book description that sells.",
       "totalPage": 443,
       "category": "Nonfiction",
       "tags": ["history", "anthropology", "evolution"],
       "publisher": "Harper",
       "yearOfPublishing": 2011
-      , "rating":"3.00"
+      , "rating":"3.03"
     },
     {
       "bookId": 6,
       "bookName": "The Catcher",
       "author": "J.D. Salinger",
       "image": "https://img.freepik.com/free-vector/professional-business-book-cover_23-2149490317.jpg?w=740&t=st=1711382458~exp=1711383058~hmac=7c6323468ef9d2e6b0f8b38834af07e48b709975b8bbbd9cd0e8e3cd1781ad02",
-      "review": "A portrayal of adolescent angst and rebellion.",
+      "review": "Along with your book cover, your book description is one of the first",
       "totalPage": 277,
       "category": "Fiction",
       "tags": ["adolescence", "rebellion", "coming-of-age"],
       "publisher": "Little, Brown and Company",
       "yearOfPublishing": 1951
-      , "rating":"5.00"
+      , "rating":"5.05"
     }
   ]
   
