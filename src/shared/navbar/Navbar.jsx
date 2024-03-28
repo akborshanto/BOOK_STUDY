@@ -71,7 +71,7 @@ PagesBook
           }
           style={{ marginRight: "30px", }}
         >
-       Contact
+       About Us
         </NavLink>
 
           <NavLink
@@ -83,7 +83,7 @@ PagesBook
           }
           style={{ marginRight: "30px" }}
         >
-   Book Item
+   Poet
         </NavLink>
             </ul>
           </div>
@@ -137,7 +137,7 @@ PagesBook
             }
             style={{ marginRight: "30px", }}
           >
-        Contact
+        About Us
           </NavLink>
 
             <NavLink
@@ -149,7 +149,7 @@ PagesBook
             }
             style={{ marginRight: "30px" }}
           >
-      Book Item
+      POET
           </NavLink>
 
           </ul>

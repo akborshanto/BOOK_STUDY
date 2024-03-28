@@ -17,6 +17,7 @@ import Contact from './pages/contact/Contact.jsx';
 import Blog from './pages/blog/Blog.jsx';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import TotalPage from './component/sort/TotalPage.jsx';
 
 const router = createBrowserRouter([
   {
@@ -39,6 +40,7 @@ element:<Home></Home>
 {
   path: '/bookDetail/:bookId',
   element:<BookDetail></BookDetail>
+  ,loader:()=>fetch('/data.json')
 
 },
 
@@ -54,11 +56,16 @@ element:<Home></Home>
   element:<Blog></Blog>
 
 },
-
+{
+  path:'/totalPage',
+  element:<TotalPage></TotalPage>
+},
 
 
 
 ]
+
+
 
 
 

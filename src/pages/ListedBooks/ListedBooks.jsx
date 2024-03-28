@@ -7,38 +7,53 @@ import { IoMdContact } from "react-icons/io";
 import { MdOutlineContactPage } from "react-icons/md";
 import { IoIosArrowDown } from "react-icons/io";
 import Read from "../../dynamic/Read";
+import TotalPage from "../../component/sort/TotalPage";
 const ListedBooks = () => {
   const [read, setRead] = useState([]);
   const [wish, setWish] = useState([]);
-const [readDisplay,setReadDisplay]=useState([])
+
+
+/* sort to page */
+const [sortread,setSortRead]=useState([])
   //console.log(read)
   useEffect(() => {
+
+
+
     const getDefaultData = JSON.parse(localStorage.getItem("read")) || [];
     setRead(getDefaultData);
-
+    setSortRead(getDefaultData)
   }, []);
 
   /* wish list */
 
   useEffect(() => {
-    const getDefaultData = JSON.parse(localStorage.getItem("wishList")) || [];
-    setWish(getDefaultData);
-    setReadDisplay(getDefaultData)
+    const getDefaultDatas = JSON.parse(localStorage.getItem("wishList")) || [];
+    setWish(getDefaultDatas);
+setSortRead(getDefaultDatas)
   }, []);
 
 
+const ratinSort=sortread.sort((a,b)=>{
 
-  // const sorts=[
-  //   {name:'shanto',score:30},
-  //   {name:'adto',score:20},
-  // ]
-  // console.log(readDisplay)
+  return b.rating - a.rating
+})
+// const totalPageSort=sortread.sort((a,b)=>{
 
-//   /* context api */
-// if(read.length <1){
-//   return <h1>PLZ READ THE BOOK</h1>
-// }
- 
+//   return b.totalPage - a.totalPage
+// })
+
+
+const handleRating=(e)=>{
+const sorts=sortread.sort((a,b)=>{
+
+    return b.totalPage - a.totalPage
+  })
+ setSortRead(sorts)
+
+
+
+}
   return (
    
     <div>
@@ -48,7 +63,7 @@ const [readDisplay,setReadDisplay]=useState([])
         BOOKS
       </h1>
 
-      <div className="dropdown dropdown-bottom mb-16 lg:mb-6">
+<div className="dropdown dropdown-bottom mb-16 lg:mb-6">
         <div tabIndex={0} role="button" className="btn m-1 bg-green-400 border-none text-white text-xl">
           Sort By<IoIosArrowDown />
         </div>
@@ -57,11 +72,13 @@ const [readDisplay,setReadDisplay]=useState([])
           className="dropdown-content z-[1] menu p-2 shadow text-[#FFAC33] font-bold text-xl  rounded-box w-52"
         >
           <li >
-            <a>Rating</a>
+            <a  onClick={handleRating}>Rating</a>
           </li>
-          <li>
+ 
+          <li >
             <a>Number of Pages</a>
           </li>
+ 
           <li>
             <a>Published Year</a>
           </li>
@@ -145,7 +162,10 @@ read.length <1?<Read></Read>:''
 
 <button class="btn bg-[#328EFF99] rounded-3xl border-none text-white lg:text-xl">Category:{item.category}</button>
 <button class="btn bg-[#FFAC3326] text-[#FFAC33] rounded-3xl border-none lg:text-xl mx-6">Rating:{item.rating}</button>
+
+
 <button class="btn bg-[#23BE0A] rounded-3xl border-none text-white lg:text-xl">viewDetails</button>
+
 </div>
 
        </div>

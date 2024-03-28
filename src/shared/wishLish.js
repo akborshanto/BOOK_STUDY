@@ -1,25 +1,20 @@
-import { toast } from "react-toastify"
+import { toast } from "react-toastify";
 
-export const wishListLocalStorage=(singleData)=>{
+export const wishListLocalStorage = (singleData) => {
+  /* get data form localStorage */
 
-    /* get data form localStorage */
+  const getData = localStorage.getItem("wishList");
 
-const getData=localStorage.getItem('wishList')
+  const saveData = JSON.parse(getData) || [];
 
-const saveData=JSON.parse(getData)  || []
+  const dataAseKina = saveData.find((item) => item.bookId == singleData.bookId);
 
-const dataAseKina=saveData.find(item => item.bookId  == singleData.bookId)
-
-if(dataAseKina){
-toast.error('Already Data Added')
-
-}else{
-
-
-
-saveData.push(singleData)
-const localValue=JSON.stringify(saveData)
-localStorage.setItem('wishList',localValue)
-toast('data saved successfull')
-}
-}
+  if (dataAseKina) {
+    toast.error("Already Data Added");
+  } else {
+    saveData.push(singleData);
+    const localValue = JSON.stringify(saveData);
+    localStorage.setItem("wishList", localValue);
+    toast("Book saved successfull");
+  }
+};

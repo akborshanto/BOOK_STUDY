@@ -9,13 +9,12 @@ import { wishListLocalStorage } from "../../shared/wishLish";
 const BookDetail = () => {
   const { bookId } = useParams();
   const [singleData, setSingleData] = useState({});
-
   /* useDontaiton */
   const { data, loading } = UseDonation();
   //console.log(typeof bookId)
 
   useEffect(() => {
- 
+   
     const findData = data.find((item) => item.bookId == bookId);
     //console.log(findData)
     setSingleData(findData);
@@ -23,26 +22,25 @@ const BookDetail = () => {
 
 const handleRead=()=>{
 
+
+
 if(singleData ){
 readLocalStorage(singleData)
 wishListLocalStorage(singleData)
-  
-
 }
-
 }
 /* handle wishlist */
 const handleWishList=()=>{
 
- 
+
    if(singleData){
     wishListLocalStorage(singleData)
-  
+
    }
 
 
 }
-const{bookId:books,image,tags,bookName,author,rating,category}=singleData || {}
+const{image,tags,bookName,author,rating,category}=singleData || {}
 
 /* useContext */
 
@@ -50,44 +48,43 @@ const{bookId:books,image,tags,bookName,author,rating,category}=singleData || {}
 
     <section className="bg-white text-black font-bold ">
     <ToastContainer />
-      <div className="container max-w-xl p-6 py-12 mx-auto space-y-24 lg:px-8 lg:max-w-7xl">
-        <div className="grid lg:gap-8 lg:grid-cols-2 lg:items-center">
+      <div className="container max-w-xl p-6 py-6 lg:py-12 mx-auto  lg:px-8 lg:max-w-7xl">
+        <div className="grid gap-4  lg:gap-8 lg:grid-cols-2 lg:items-center">
           <div className="lg:col-start-2">
             <h3 className="text-2xl font-bold tracking-tight sm:text-4xl text-black">
               {singleData?.bookName}
             </h3>
-        <h4 className=" border-b-2 p-4 text-2xl font-semibold">By:{singleData?.author}</h4>
-            <div className="mt-12 space-y-12">
+        <h4 className=" lg:border-b-2 mt-2 lg:mt-0 lg:p-4 text-xxl font-semibold">By:{singleData?.author}</h4>
+            <div className="mt-2 lg:mt-12 ">
              
-<h4 className="text-2xl font-semibold border-b-2 p-2">{singleData?.category}</h4>
-<h4 className="text-2xl font-semibold"><span className='text-gray-400 text-3xl'>Review:</span>{singleData?.review}</h4>
+<h4 className="text-xl lg:text-2xl font-semibold border-b-2 p-2">{singleData?.category}</h4>
+<h4 className="text-xl lg:2xl font-semibold"><span className='text-gray-400 text-xl lg:2xl'>Review:</span>{singleData?.review}</h4>
 
          
     
-<div className='flex flex-col lg:justify-between lg:flex-row border-b-2 p-2'>
-<h4 className="text-2xl font-semibold ">Tag</h4>
+<div className='flex justify-between lg:justify-between lg:flex-row border-b-2 p-2'>
+<h4 className="text-xl lg:text-2xl font-semibold ">Tag</h4>
 
-<h4 className="text-green-400 font-semibold text-2xl">#classic</h4>
-<h4 className="text-2xl font-semibold text-green-400">#adolesence</h4>
+<h4 className="text-green-400 font-semibold text-xl lg:text-2xl">#classic</h4>
+<h4 className="text-xl  lg:text-2xl font-semibold text-green-400">#adolesence</h4>
 
 
 
 
 </div>
 
-<div className='flex flex-col lg:justify-between gap-11 lg:flex-row '>
+<div className='flex flex-col lg:justify-between  gap-4 lg:gap-12 lg:flex-row '>
 
 
 
-<h4 className="text-2xl font-semibold "><span className="text-[#131313CC]">Number of Pagaes:</span>
+<h4 className="text-xl lg:text-2xl font-semibold "> 
+Number of Pagaes:
+<span className="text-[#131313CC] text-2xl"> {singleData?.totalPage}</span>
 
 </h4>
 
 
-<h4 className="text-2xl font-semibold ">
 
-
-{singleData?.totalPage}</h4>
 
 
 
@@ -96,8 +93,8 @@ const{bookId:books,image,tags,bookName,author,rating,category}=singleData || {}
 
 
 
-<h4 className="text-2xl font-semibold "><span className="text-[#131313CC]">Publisher:</span></h4>
-<h4 className="text-2xl font-semibold ">{singleData?.publisher}</h4>
+<h4 className="text-xl lg:text-2xl font-semibold "><span className="text-[#131313CC]">Publisher: {singleData?.publisher}</span></h4>
+
 
 
 
@@ -107,10 +104,9 @@ const{bookId:books,image,tags,bookName,author,rating,category}=singleData || {}
 
 
 <h4 className="text-2xl font-semibold ">
-<span className="text-[#131313CC]">Year of Publishing::</span>
+<span className="text-[#131313CC]">Year of Publishing: {singleData?.yearOfPublishing}</span>
 
 </h4>
-<h4 className="text-2xl font-semibold ">{singleData?.yearOfPublishing}</h4>
 
 
 
@@ -119,12 +115,7 @@ const{bookId:books,image,tags,bookName,author,rating,category}=singleData || {}
 
 
 
-<h4 className="text-2xl font-semibold ">
-
-<span className="text-[#131313CC]">Rating: </span>
-
-</h4>
-<h4 className="text-2xl font-semibold ">{singleData?.rating}</h4>
+<h4 className="text-2xl font-semibold text-orange-200  my-4">Rating:{singleData?.rating}</h4>
 
 
 
@@ -145,7 +136,7 @@ const{bookId:books,image,tags,bookName,author,rating,category}=singleData || {}
             <img
               src={singleData?.image}
               alt=""
-              className="mx-auto rounded-lg shadow-lg bg-gray-500 w-full"
+              className="mx-auto rounded-lg shadow-lg bg-gray-500 h-[300px] "
             />
           </div>
         </div>
