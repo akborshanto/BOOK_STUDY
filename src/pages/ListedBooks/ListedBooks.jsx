@@ -54,14 +54,19 @@ const[page,setPage]=useState([])
 setSortRead(read)
   }
   
-  else if(filter){
-    const rating=read.sort((a,b)=> a.totalPage - b.totalPage)
-setPage(rating)
-  }
+
 
   }
-  
+  const handlePages=(pagess)=>{
 
+    const pages=read.sort((a,b)=>b.totalPage - a.totalPage)
+    setSortRead(read)
+  }
+const handleYear=(year)=>{
+const publishYear=read.sort((a,b)=>b.yearOfPublishing - a.yearOfPublishing)
+setSortRead(read)
+
+}
 
   return (
    
@@ -85,11 +90,11 @@ setPage(rating)
             <a  onClick={()=>handleRating(sortread)}>Rating</a>
           </li>
  
-          <li onClick={()=>handleRating(sortread)}>
+          <li onClick={()=>handlePages(sortread)}>
             <a>Number of Pages</a>
           </li>
  
-          <li onClick={()=>handleRating(setRead)}>
+          <li onClick={()=>handleYear(sortread)}>
             <a>Published Year</a>
           </li>
         </ul>
