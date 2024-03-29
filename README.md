@@ -10,9 +10,9 @@
 - [ReChart](https://recharts.org/en-US)
 - [Tailwind](https://tailwindcss.com/) & [DaisyUi](https://daisyui.com/)
 - [Netlify](https://app.netlify.com/)
-- [Livelink] (https://6605942b7bc72a26f4d4bdf6--silly-pie-2fab92.netlify.app/listedBook)
 
 # Live Link to netlify
+- [Livelink] (https://6605942b7bc72a26f4d4bdf6--silly-pie-2fab92.netlify.app/listedBook)
 
 
 
