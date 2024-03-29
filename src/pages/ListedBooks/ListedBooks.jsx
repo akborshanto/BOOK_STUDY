@@ -11,10 +11,13 @@ import TotalPage from "../../component/sort/TotalPage";
 const ListedBooks = () => {
   const [read, setRead] = useState([]);
   const [wish, setWish] = useState([]);
-
+const [sortBy,setSortBy]=useState("all")
 
 /* sort to page */
 const [sortread,setSortRead]=useState([])
+const [sortPage,setSortPage]=useState([])
+
+
   //console.log(read)
   useEffect(() => {
 
@@ -31,29 +34,35 @@ const [sortread,setSortRead]=useState([])
     const getDefaultDatas = JSON.parse(localStorage.getItem("wishList")) || [];
     setWish(getDefaultDatas);
 setSortRead(getDefaultDatas)
+setSortPage(getDefaultDatas)
   }, []);
 
 
-const ratinSort=sortread.sort((a,b)=>{
 
-  return b.rating - a.rating
-})
-// const totalPageSort=sortread.sort((a,b)=>{
-
-//   return b.totalPage - a.totalPage
+// const sortedBots=[...read].sort((botA,botB)=>{
+//   return botA[sortBy] - botB[sortBy]
 // })
 
+const[page,setPage]=useState([])
+  const handleRating=(filter)=>{
+    console.log(filter)
+  if(!filter ){
+    setSortRead(read)
+  }
+  else if(read){
+    const rating=read.sort((a,b)=> b.rating - a.rating)
+setSortRead(read)
+  }
+  
+  else if(filter){
+    const rating=read.sort((a,b)=> a.totalPage - b.totalPage)
+setPage(rating)
+  }
 
-const handleRating=(e)=>{
-const sorts=sortread.sort((a,b)=>{
-
-    return b.totalPage - a.totalPage
-  })
- setSortRead(sorts)
+  }
+  
 
 
-
-}
   return (
    
     <div>
@@ -71,15 +80,16 @@ const sorts=sortread.sort((a,b)=>{
           tabIndex={0}
           className="dropdown-content z-[1] menu p-2 shadow text-[#FFAC33] font-bold text-xl  rounded-box w-52"
         >
+     
           <li >
-            <a  onClick={handleRating}>Rating</a>
+            <a  onClick={()=>handleRating(sortread)}>Rating</a>
           </li>
  
-          <li >
+          <li onClick={()=>handleRating(sortread)}>
             <a>Number of Pages</a>
           </li>
  
-          <li>
+          <li onClick={()=>handleRating(setRead)}>
             <a>Published Year</a>
           </li>
         </ul>
@@ -92,7 +102,7 @@ const sorts=sortread.sort((a,b)=>{
       </TabList>
 
       {
-read.length <1?<Read></Read>:''
+sortread.length <1?<Read></Read>:''
 
       }
       <TabPanel className=''>
@@ -100,7 +110,7 @@ read.length <1?<Read></Read>:''
      <div className="">
      
      
-     {read?.map((item) => (
+     {sortread.map((item) => (
 
 
        <div  key={Math.random()} className=" mb-4  mt-10 lg:mt-16 lg:mb-12 shadow-2xl hover:bg-green-100    p-4">

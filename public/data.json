@@ -10,7 +10,7 @@
       "tags": ["classic", "racial injustice", "morality"],
       "publisher": "J. B. Lippincott & Co.",
       "yearOfPublishing": 1960,
-     "rating":"5.05"
+     "rating":5.25
     },
     {
       "bookId": 2,
@@ -23,7 +23,7 @@
       "tags": ["dystopian", "totalitarianism", "surveillance"],
       "publisher": "Secker & Warburg",
       "yearOfPublishing": 1949
-      , "rating":"4.02"
+      , "rating":"4.12"
     },
     {
       "bookId": 3,
@@ -36,7 +36,7 @@
       "tags": ["American Dream", "Jazz Age", "wealth"],
       "publisher": "Charles Scribner's Sons",
       "yearOfPublishing": 1925
-      , "rating":"5.01"
+      , "rating":"5.11"
     },
     {
       "bookId": 4,
@@ -49,7 +49,7 @@
       "tags": ["romance", "social commentary", "Regency era"],
       "publisher": "T. Egerton, Whitehall",
       "yearOfPublishing": 1813
-      ,  "rating":"3.02"
+      ,  "rating":"3.22"
     },
     {
       "bookId": 5,
@@ -62,7 +62,7 @@
       "tags": ["history", "anthropology", "evolution"],
       "publisher": "Harper",
       "yearOfPublishing": 2011
-      , "rating":"3.03"
+      , "rating":"3.33"
     },
     {
       "bookId": 6,
@@ -75,7 +75,7 @@
       "tags": ["adolescence", "rebellion", "coming-of-age"],
       "publisher": "Little, Brown and Company",
       "yearOfPublishing": 1951
-      , "rating":"5.05"
+      , "rating":"5.25"
     }
   ]
   

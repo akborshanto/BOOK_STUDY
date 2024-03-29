@@ -35,7 +35,6 @@ const [read,setRead]=useState([])
   const readsBook=read.map((book)=> book.bookName.slice(0,5))
 //console.log(reads)
 
-console.log(readsBook)
 
   const data = [
     {
