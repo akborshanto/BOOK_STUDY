@@ -14,13 +14,13 @@
 - [Netlify](https://app.netlify.com/)
 
 ## Step to Install the project
-1.CLone the repository
+# 1.CLone the repository
 - git clone https://github.com/akborshanto/BOOK_STUDY.git
-2.Navigate to the project directory
+ # 2.Navigate to the project directory
 - cd projectName
-3.Install Dependencies
+ # 3.Install Dependencies
 - npm install
- 4.Start the Development Server
+ #  4.Start the Development Server
 - NPM START
 
 
