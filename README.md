@@ -19,10 +19,9 @@
 2.Navigate to the project directory
 - cd projectName
 3.Install Dependencies
-   - npm install
-4.Start the Development Server
-    - npm start
-
+- npm install
+ 4.Start the Development Server
+- NPM START
 
 
 
